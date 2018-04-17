@@ -34,7 +34,7 @@ $app->get('/cowsay', function() use($app) {
 
 $app->get('/hw', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  return str('Hello World');
+  return str_repeat('Hello World', 1);
 });
 
 $dbopts = parse_url(getenv('DATABASE_URL'));
