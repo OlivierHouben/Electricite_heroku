@@ -32,6 +32,11 @@ $app->get('/cowsay', function() use($app) {
   return "<pre>".\Cowsayphp\Cow::say("Cool beans")."</pre>";
 });
 
+$app->get('/hw', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return str_repeat('Hello World');
+});
+
 $dbopts = parse_url(getenv('DATABASE_URL'));
 $app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider('pdo'),
                array(
