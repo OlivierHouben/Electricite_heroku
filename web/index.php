@@ -97,7 +97,9 @@ $app->get('/email', function() use($app) {
   $header .= "Cc:\r\n";
   $header .= "MIME-Version: 1.0\r\n";
   $header .= "Content-type: text/html\r\n";
-  $retval = mail ($to,$subject,$message,$header);
+  $email = "arduino";
+  //$retval = mail ($to,$subject,$message,$header);
+  $retval = mail ($to,$subject,$message, "From:" . $email);
   
   if( $retval == true ) {
             return "done";
