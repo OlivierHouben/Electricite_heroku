@@ -4,8 +4,8 @@
 <p>Got these rows from the database:</p>
 
 <ul>
-{% for n in sms %}
-  <li> {{ n.name }} </li>
+{% for n in names %}
+  <li> {{ n.sms }} </li>
 {% else %}
   <li>Nameless!</li>
 {% endfor %}
