@@ -37,6 +37,11 @@ $app->get('/hw', function() use($app) {
   return str_repeat('Hello World', 1);
 });
 
+$app->get('/hwt', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return ('Hello World');
+});
+
 $dbopts = parse_url(getenv('DATABASE_URL'));
 $app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider('pdo'),
                array(
@@ -93,6 +98,7 @@ $app->get('/email', function() use($app) {
   $header .= "MIME-Version: 1.0\r\n";
   $header .= "Content-type: text/html\r\n";
   $retval = mail ($to,$subject,$message,$header);
+  return "done";
 });
 
 $app->run();
