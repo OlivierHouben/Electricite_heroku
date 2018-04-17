@@ -99,7 +99,7 @@ $app->get('/email', function() use($app) {
   $header .= "Content-type: text/html\r\n";
   $email = "arduino";
   //$retval = mail ($to,$subject,$message,$header);
-  $retval = mail ($to,$subject,$message, "From:" . $email);
+  $retval = mail ($to,"$subject",$message, "From:" . $email);
   
   if( $retval == true ) {
             return "done";
