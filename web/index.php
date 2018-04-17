@@ -98,7 +98,12 @@ $app->get('/email', function() use($app) {
   $header .= "MIME-Version: 1.0\r\n";
   $header .= "Content-type: text/html\r\n";
   $retval = mail ($to,$subject,$message,$header);
-  return "done";
+  
+  if( $retval == true ) {
+            return "done";
+  }else {
+            return "echec";
+        }
 });
 
 $app->run();
