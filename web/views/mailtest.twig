@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<p>Sending email php</p>
+
+<ul>
+{% for n in names %}
+  <li> {{ n.sms }} </li>
+{% else %}
+  <li>Nameless!</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

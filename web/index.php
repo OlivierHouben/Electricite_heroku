@@ -81,4 +81,18 @@ $app->get('/db2/', function() use($app) {
   ));
 });
 
+
+$app->get('/email', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  $to = "florian.bawin@hotmail.com";       //Receiver email.
+  $subject = "Arduino";
+  $message = "Test arduino";
+  //$message = $_GET['text'];               //Text variable will be the message content
+  $header = "From: Arduino\r\n";
+  $header .= "Cc:\r\n";
+  $header .= "MIME-Version: 1.0\r\n";
+  $header .= "Content-type: text/html\r\n";
+  $retval = mail ($to,$subject,$message,$header);
+});
+
 $app->run();
