@@ -61,4 +61,19 @@ $app->get('/db/', function() use($app) {
   ));
 });
 
+$app->get('/db2/', function() use($app) {
+  $st = $app['pdo']->prepare('SELECT SMS FROM arduino_test');
+  $st->execute();
+
+  $names = array();
+  while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
+    $app['monolog']->addDebug('Row ' . $row['SMS']);
+    $names[] = $row;
+  }
+
+  return $app['twig']->render('database2.twig', array(
+    'SMS' => $names
+  ));
+});
+
 $app->run();
