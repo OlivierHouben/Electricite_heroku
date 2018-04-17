@@ -72,7 +72,7 @@ $app->get('/db2/', function() use($app) {
   }
 
   return $app['twig']->render('database2.twig', array(
-    'SMS' => $names
+    'names' => $names
   ));
 });
 
