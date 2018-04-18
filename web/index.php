@@ -119,22 +119,22 @@ $app->get('/db5/', function() use($app) {
 
 $app->get('/db6', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  $dbusername = "arduino";
+  $to = "florian.bawin@hotmail.com";
   //$message = $_GET['text'];
-  return ($dbusername);
+  return "done";
 });
 
-$app->get('/db7', function() use($app) {
+$app->get('/db6', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  $dbusername = "arduino";
+  $message = "florian.bawin@hotmail.com";
   //$message = $_GET['text'];
-  return ("$dbusername");
+  return $message;
 });
 
 $app->get('/db8', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   $dbusername = "arduino";
-  return ("arduino");
+  return dbusername;
 });
 
 $app->get('/db9', function() use($app) {
