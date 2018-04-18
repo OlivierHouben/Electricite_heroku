@@ -118,12 +118,29 @@ $app->get('/db5/', function() use($app) {
 });
 
 $app->get('/db6', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
   $dbusername = "arduino";
   //$message = $_GET['text'];
-  $app['monolog']->addDebug('logging output.');
   return ($dbusername);
 });
 
+$app->get('/db7', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  $dbusername = "arduino";
+  //$message = $_GET['text'];
+  return ("$dbusername");
+});
+
+$app->get('/db8', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  $dbusername = "arduino";
+  return ("arduino");
+});
+
+$app->get('/db9', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return ("arduino");
+});
 
 // heroku don't support send email
 $app->get('/email', function() use($app) {
