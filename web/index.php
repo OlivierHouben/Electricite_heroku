@@ -126,18 +126,11 @@ $app->get('/db6', function() use($app) {
 
 $app->get('/db7', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  $message = "florian.bawin@hotmail.com";
-  //$message = $_GET['text'];
-  return $message;
-});
-
-$app->get('/db8', function() use($app) {
-  $app['monolog']->addDebug('logging output.');
   $dbusername = "arduino";
   return $dbusername;
 });
 
-$app->get('/db10', function() use($app) {
+$app->get('/db8', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   $dbusername = "arduino";
   return "$dbusername";
@@ -145,7 +138,8 @@ $app->get('/db10', function() use($app) {
 
 $app->get('/db9', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  return ("arduino");
+  $dbusername = "florian.bawin@hotmail.com";
+  return "$dbusername";
 });
 
 // heroku don't support send email
