@@ -4,6 +4,7 @@ require('../vendor/autoload.php');
 
 $app = new Silex\Application();
 //deuxieme ommentaire
+//test local 2
 //test git local github
 // commentaire test github
 $app['debug'] = true;
