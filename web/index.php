@@ -94,6 +94,21 @@ $app->get('/db3/', function() use($app) {
   return ('Insert val');
 });
 
+$app->get('/db4/', function() use($app) {
+  $st = $app['pdo']->prepare('SELECT name FROM test_incr');
+  $st->execute();
+
+  $names = array();
+  while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
+    $app['monolog']->addDebug('Row ' . $row['name']);
+    $names[] = $row;
+  }
+
+  return $app['twig']->render('database3.twig', array(
+    'names' => $names
+  ));
+});
+
 // heroku don't support send email
 $app->get('/email', function() use($app) {
   $app['monolog']->addDebug('logging output.');
