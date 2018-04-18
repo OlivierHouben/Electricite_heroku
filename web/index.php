@@ -124,7 +124,7 @@ $app->get('/db6', function() use($app) {
   return "done";
 });
 
-$app->get('/db6', function() use($app) {
+$app->get('/db7', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   $message = "florian.bawin@hotmail.com";
   //$message = $_GET['text'];
