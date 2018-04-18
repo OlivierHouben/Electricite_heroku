@@ -3,6 +3,6 @@
   "description": "App to receive arduino data",
   "repository": "https://github.com/OlivierHouben/Electricite_heroku",
   "addons": [
-  "heroku-postgresql:hobby-basic"
-	  ]
+ "plan": "heroku-postgresql"
+	  ],
 }
