@@ -143,6 +143,13 @@ $app->get('/db9/', function() use($app) {
   return "$dbusername";
 });
 
+$app->get('/db10/', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  $dbusername = "arduino";
+  $message = $_GET["text"];
+  return "$message";
+});
+
 // heroku don't support send email
 $app->get('/email', function() use($app) {
   $app['monolog']->addDebug('logging output.');
