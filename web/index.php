@@ -150,6 +150,29 @@ $app->get('/db10/', function() use($app) {
   return "$message";
 });
 
+$app->get('/db11/', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  $dbusername = "arduino";
+  $message = $_GET["text"];
+  
+  $st = $app['pdo']->prepare("INSERT INTO test_incr (name) VALUES ('$dbusername')");
+  $st->execute();
+  
+  return "$message";
+});
+
+$app->get('/db12/', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  $dbusername = "arduino";
+  $message = $_GET["text"];
+  
+  $st = $app['pdo']->prepare("INSERT INTO test_incr (name) VALUES ('$message')");
+  $st->execute();
+  
+  return "$message";
+});
+
+
 // heroku don't support send email
 $app->get('/email', function() use($app) {
   $app['monolog']->addDebug('logging output.');
