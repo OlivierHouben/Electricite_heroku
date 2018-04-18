@@ -3,6 +3,8 @@
 require('../vendor/autoload.php');
 
 $app = new Silex\Application();
+
+// commentaire test github
 $app['debug'] = true;
 
 // Register the monolog logging service
