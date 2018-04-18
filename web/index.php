@@ -110,9 +110,33 @@ $app->get('/db4/', function() use($app) {
 });
 
 $app->get('/db5/', function() use($app) {
-  $st = $app['pdo']->prepare("INSERT INTO test_incr (id, name) VALUES (4, 'arduino_test_4')");
+  $st = $app['pdo']->prepare("INSERT INTO test_incr (id, name) VALUES (4, 'arduino_test_4n')");
   $st->execute();
-  $st = $app['pdo']->prepare("INSERT INTO test_incr (id, name) VALUES (5, 'arduino_test_45')");
+  $st = $app['pdo']->prepare("INSERT INTO test_incr (id, name) VALUES (5, 'arduino_test_45n')");
+  $st->execute();
+
+  $app['monolog']->addDebug('logging output.');
+  return ('Insert val');
+});
+
+$app->get('/db6/', function() use($app) {
+  $st = $app['pdo']->prepare("INSERT INTO test_incr (id, name) VALUES (7, 'arduino_test_7')");
+  $st->execute();
+
+  $app['monolog']->addDebug('logging output.');
+  return ('Insert val');
+});
+
+$app->get('/db7/', function() use($app) {
+  $st = $app['pdo']->prepare("INSERT INTO test_incr (name) VALUES ('arduino_test_db7')");
+  $st->execute();
+
+  $app['monolog']->addDebug('logging output.');
+  return ('Insert val');
+});
+
+$app->get('/db8/', function() use($app) {
+  $st = $app['pdo']->prepare("INSERT INTO test_incr (name) VALUE ('arduino_test_db8')");
   $st->execute();
 
   $app['monolog']->addDebug('logging output.');
