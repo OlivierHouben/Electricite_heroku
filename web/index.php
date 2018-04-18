@@ -109,37 +109,21 @@ $app->get('/db4/', function() use($app) {
   ));
 });
 
-$app->get('/db6/', function() use($app) {
-  $st = $app['pdo']->prepare("INSERT INTO test_incr (id, name) VALUES (11, 'arduino_test_11')");
+$app->get('/db5/', function() use($app) {
+  $st = $app['pdo']->prepare("INSERT INTO test_incr (name) VALUES ('arduino_test_db5')");
   $st->execute();
 
   $app['monolog']->addDebug('logging output.');
   return ('Insert val');
 });
 
-$app->get('/db7/', function() use($app) {
-  $st = $app['pdo']->prepare("INSERT INTO test_incr (name) VALUES ('arduino_test_db7')");
-  $st->execute();
-
+$app->get('/db6', function() use($app) {
+  $dbusername = "arduino";
+  //$message = $_GET['text'];
   $app['monolog']->addDebug('logging output.');
-  return ('Insert val');
+  return ($dbusername);
 });
 
-$app->get('/db8/', function() use($app) {
-  $st = $app['pdo']->prepare("insert into test_incr (name) values ('arduino_test_db8')");
-  $st->execute();
-
-  $app['monolog']->addDebug('logging output.');
-  return ('Insert val');
-});
-
-$app->get('/db9/', function() use($app) {
-  $st = $app['pdo']->prepare("INSERT INTO test_incr (id, name) VALUES (10, 'arduino_test_db10')");
-  $st->execute();
-
-  $app['monolog']->addDebug('logging output.');
-  return ('Insert val');
-});
 
 // heroku don't support send email
 $app->get('/email', function() use($app) {
