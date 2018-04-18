@@ -110,7 +110,7 @@ $app->get('/db4/', function() use($app) {
 });
 
 $app->get('/db5/', function() use($app) {
-  $st = $app['pdo']->prepare("INSERT INTO test_incr (id, name) VALUES (3, 'arduino_test_5')");
+  $st = $app['pdo']->prepare("INSERT INTO test_incr (id, name) VALUES (6, 'arduino_test_5')");
   $st->execute();
 
   $app['monolog']->addDebug('logging output.');
