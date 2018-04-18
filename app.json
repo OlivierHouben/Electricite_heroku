@@ -1,12 +1,13 @@
 {
-  "name": "Start on Heroku: PHP",
-  "description": "A barebones PHP app that makes use of the Silex web framework",
-  "repository": "https://github.com/heroku/php-getting-started",
+  "name": "Electricite",
+  "description": "App to receive arduino data",
+  "repository": "https://github.com/OlivierHouben/Electricite_heroku",
   "addons": [{
   
+       {
       "plan": "heroku-postgresql",
       "options": {
         "version": "9.5"
-		
-      }]
+      }
+    }]
 }
