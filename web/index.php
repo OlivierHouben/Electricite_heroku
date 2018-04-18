@@ -134,7 +134,13 @@ $app->get('/db7', function() use($app) {
 $app->get('/db8', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   $dbusername = "arduino";
-  return dbusername;
+  return $dbusername;
+});
+
+$app->get('/db10', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  $dbusername = "arduino";
+  return "$dbusername";
 });
 
 $app->get('/db9', function() use($app) {
