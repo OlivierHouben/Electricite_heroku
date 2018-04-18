@@ -2,12 +2,13 @@
   "name": "Electricite",
   "description": "App to receive arduino data",
   "repository": "https://github.com/OlivierHouben/Electricite_heroku",
-  "addons": [{
+  "addons": [
   
        {
       "plan": "heroku-postgresql",
       "options": {
         "version": "9.5"
       }
-    }]
+	  }
+	  ]
 }
