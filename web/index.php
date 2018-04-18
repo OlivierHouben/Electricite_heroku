@@ -117,26 +117,26 @@ $app->get('/db5/', function() use($app) {
   return ('Insert val');
 });
 
-$app->get('/db6', function() use($app) {
+$app->get('/db6/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   $to = "florian.bawin@hotmail.com";
   //$message = $_GET['text'];
   return "done";
 });
 
-$app->get('/db7', function() use($app) {
+$app->get('/db7/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   $dbusername = "arduino";
   return $dbusername;
 });
 
-$app->get('/db8', function() use($app) {
+$app->get('/db8/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   $dbusername = "arduino";
   return "$dbusername";
 });
 
-$app->get('/db9', function() use($app) {
+$app->get('/db9/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   $dbusername = "florian.bawin@hotmail.com";
   return "$dbusername";
