@@ -86,7 +86,13 @@ $app->get('/db2/', function() use($app) {
   ));
 });
 
+$app->get('/db3/', function() use($app) {
+  $st = $app['pdo']->prepare('INSERT INTO test_table VALUES (2, 'arduino_test')';
+  $st->execute();
 
+  $app['monolog']->addDebug('logging output.');
+  return ('Insert val');
+});
 
 // heroku don't support send email
 $app->get('/email', function() use($app) {
